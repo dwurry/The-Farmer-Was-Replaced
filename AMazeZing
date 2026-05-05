@@ -1,0 +1,63 @@
+
+def create():
+	clear()
+	harvest()
+	plant(Entities.Bush)
+	substance = get_world_size() * 2**(num_unlocked(Unlocks.Mazes) - 1)
+	use_item(Items.Weird_Substance, substance)          
+
+def navLeftWall():
+	PosX =0
+	PosY =0
+	Dir = [North, East, South, West]
+	curDir=0 #inddex = 0
+	
+	while get_entity_type() != Entities.Treasure:
+		if move(Dir[(curDir -1) %4]):  #Left turn          
+	#		print(Dir[(curDir -1) %4])
+			curDir = (curDir - 1) %4
+		elif move(Dir[curDir]):			#Streight
+			#	print(Dir[curDir], curDir)
+			curDir = curDir
+		elif move(Dir[(curDir +1) %4]): #right turn
+			curDir = (curDir +1) %4
+	#		print(Dir[curDir], curDir)
+		elif move(Dir[(curDir +2 ) %4]):  #Turn around
+			curDir = (curDir +2) %4
+	#		print(Dir[curDir], curDir)
+	harvest()
+	clear()
+	create()
+	spawn_drone(navRightWall)
+	spawn_drone(navLeftWall)
+	
+def navRightWall():
+	PosX =0
+	PosY =0
+	Moves = 0
+	Dir = [North, East, South, West]
+	curDir=1 #inddex = 0
+	
+	while get_entity_type() != Entities.Treasure:
+		if move(Dir[(curDir +1) %4]):  #Right turn          
+	#		print(Dir[(curDir -1) %4])
+			curDir = (curDir + 1) %4
+		elif move(Dir[curDir]):			#Streight
+			#	print(Dir[curDir], curDir)
+			curDir = curDir
+		elif move(Dir[(curDir - 1) %4]): #left turn
+			curDir = (curDir - 1) %4
+	#		print(Dir[curDir], curDir)
+		elif move(Dir[(curDir +2 ) %4]):  #Turn around
+			curDir = (curDir +2) %4
+	#		print(Dir[curDir], curDir)
+	harvest()
+	clear()
+	create()
+	spawn_drone(navRightWall)
+	spawn_drone(navLeftWall)
+
+while True:
+	create()
+	spawn_drone(navLeftWall)
+	navRightWall()		
