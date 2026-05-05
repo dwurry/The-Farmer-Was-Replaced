@@ -46,7 +46,7 @@ def movement(homeX, homeY, awayX, awayY, loops, plantMethod):
 	goalY = awayY
 	loop = 0
 		
-	while loops > 0 and loops != -1:  #-1 signals an infinate loop
+	while loops > 0 or loops == -1:  #-1 signals an infinate loop
 		
 		plantMethod()
 		# set up initila movement
