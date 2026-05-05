@@ -1,0 +1,35 @@
+import Utils
+import Planters
+
+spawn_drone(Planters.carrotPatch1)
+spawn_drone(Planters.carrotPatch2)
+spawn_drone(Planters.forest1)
+spawn_drone(Planters.forest2)
+spawn_drone(Planters.forest3)
+spawn_drone(Planters.forest4)
+spawn_drone(Planters.forest5)
+spawn_drone(Planters.forest6)
+spawn_drone(Planters.forest7)
+spawn_drone(Planters.powerPatch)
+
+spawn_drone(Planters.pumpkinPatchHarvest)
+spawn_drone(Planters.pumpkinPatch1)
+spawn_drone(Planters.pumpkinPatch2)
+spawn_drone(Planters.pumpkinPatch3)
+
+spawn_drone(Planters.medow1)
+spawn_drone(Planters.medow2)
+spawn_drone(Planters.medow3)
+spawn_drone(Planters.medow4)
+spawn_drone(Planters.medow5)
+
+spawn_drone(Planters.forest8)
+spawn_drone(Planters.forest9)
+spawn_drone(Planters.forest10)
+spawn_drone(Planters.forest11)
+spawn_drone(Planters.forest12)
+spawn_drone(Planters.forest13)
+spawn_drone(Planters.forest14)
+spawn_drone(Planters.forest15)
+spawn_drone(Planters.forest16)
+#spawn_drone(Planters.forest17)
